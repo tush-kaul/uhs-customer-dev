@@ -1,0 +1,36 @@
+.date-picker .react-datepicker__day {
+  padding: 8px;
+  border-radius: 6px;
+  transition: background-color 0.2s ease-in-out;
+}
+
+/* Available (Green) */
+.date-picker .date-available {
+  background-color: #10b981 !important; /* Tailwind: bg-green-500 */
+  color: white !important;
+}
+
+/* Unavailable (Red) */
+.date-picker .date-unavailable {
+  background-color: #ef4444 !important; /* Tailwind: bg-red-500 */
+  color: white !important;
+}
+
+/* User Booked (Yellow) */
+.date-picker .date-user-booked {
+  background-color: #facc15 !important; /* Tailwind: bg-yellow-500 */
+  color: black !important;
+}
+
+/* Out of Range (Gray) */
+.date-picker .date-disabled {
+  background-color: #d1d5db !important; /* Tailwind: bg-gray-400 */
+  color: white !important;
+  cursor: not-allowed;
+}
+
+/* Default (Gray) */
+.date-picker .date-default {
+  background-color: #e5e7eb !important; /* Tailwind: bg-gray-200 */
+  color: #4b5563 !important; /* Tailwind: text-gray-600 */
+}
