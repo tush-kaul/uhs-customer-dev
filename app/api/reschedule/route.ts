@@ -1,17 +1,17 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import { NextRequest, NextResponse } from "next/server";
 
+const BASE_URL =
+	"http://ec2-3-28-58-24.me-central-1.compute.amazonaws.com/api/v1";
+
 async function reschedule(data: any) {
-	const response = await fetch(
-		`${process.env.NEXT_PUBLIC_BASE_URL}/schedules/reschedule`,
-		{
-			method: "POST",
-			headers: {
-				"Content-Type": "application/json",
-			},
-			body: JSON.stringify(data),
-		}
-	);
+	const response = await fetch(`${BASE_URL}/schedules/reschedule`, {
+		method: "POST",
+		headers: {
+			"Content-Type": "application/json",
+		},
+		body: JSON.stringify(data),
+	});
 	if (!response.ok) {
 		throw new Error("Failed to fetch reschedule timeslots");
 	}

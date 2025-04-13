@@ -3,6 +3,9 @@ import { NextRequest, NextResponse } from "next/server";
 import moment from "moment";
 import { cookies, headers } from "next/headers";
 
+const BASE_URL =
+	"http://ec2-3-28-58-24.me-central-1.compute.amazonaws.com/api/v1";
+
 interface ResidenceDurationMap {
 	[key: string]: number;
 }
@@ -24,7 +27,7 @@ const residenceDurationMap: ResidenceDurationMap = {
 
 async function fetchBookingStats(token: string, serviceName: string) {
 	const response = await fetch(
-		`${process.env.NEXT_PUBLIC_BASE_URL}/bookings/service-stats?service_name=${serviceName}`,
+		`${BASE_URL}/bookings/service-stats?service_name=${serviceName}`,
 		{
 			headers: {
 				authorization: token,

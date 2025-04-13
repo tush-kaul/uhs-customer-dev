@@ -2,6 +2,9 @@
 import { api } from "@/utils/base-api";
 import { NextResponse } from "next/server";
 
+const BASE_URL =
+	"http://ec2-3-28-58-24.me-central-1.compute.amazonaws.com/api/v1";
+
 async function fetchResidence() {
 	const response = await api(`/residences`);
 

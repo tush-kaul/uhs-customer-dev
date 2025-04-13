@@ -6,7 +6,7 @@ const BASE_URL =
 
 // Create axios instance with default config
 const axiosInstance = axios.create({
-	baseURL: process.env.NEXT_PUBLIC_BASE_URL,
+	baseURL: BASE_URL,
 	timeout: 15000, // 15 seconds timeout
 });
 

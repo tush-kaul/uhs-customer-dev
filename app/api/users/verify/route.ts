@@ -5,11 +5,9 @@ import { NextResponse } from "next/server";
 export async function POST(request: Request) {
 	const body = await request.json();
 
-	console.log(`${process.env.API_RESPONSE_URL}/auth/verify-token`);
-
 	try {
 		const apiResponse = await axios.post(
-			`${process.env.API_RESPONSE_URL}/auth/verify-token`,
+			"http://ec2-3-28-58-24.me-central-1.compute.amazonaws.com/api/v1/auth/verify-token",
 			body
 		);
 		return NextResponse.json({
@@ -17,7 +15,6 @@ export async function POST(request: Request) {
 			code: apiResponse.status,
 		});
 	} catch (error: unknown) {
-		console.error("Verification error details:", error);
 		if (
 			typeof error === "object" &&
 			error !== null &&

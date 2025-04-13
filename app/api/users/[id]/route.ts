@@ -4,46 +4,31 @@ import { NextRequest, NextResponse } from "next/server";
 
 // Function to fetch a user by ID
 async function fetchUserById(userId: string) {
-	const response = await api.get(
-		`${process.env.NEXT_PUBLIC_BASE_URL}/users/${userId}`,
-		{}
-	);
-
+	const response = await api.get(`/users/${userId}`, {});
 	return await response.data;
 }
 
 // Function to fetch area by ID
 async function fetchAreaById(areaId: string) {
-	const response = await api(
-		`${process.env.NEXT_PUBLIC_BASE_URL}/areas/${areaId}`,
-		{}
-	);
+	const response = await api.get(`/areas/${areaId}`, {});
 	return await response.data;
 }
 
 // Function to fetch district by ID
 async function fetchDistrictById(districtId: string) {
-	const response = await api(
-		`${process.env.NEXT_PUBLIC_BASE_URL}/districts/${districtId}`
-	);
-
+	const response = await api.get(`/districts/${districtId}`);
 	return await response.data;
 }
 
 // Function to fetch property by ID
 async function fetchPropertyById(propertyId: string) {
-	const response = await api(
-		`${process.env.NEXT_PUBLIC_BASE_URL}/properties/${propertyId}`
-	);
+	const response = await api.get(`/properties/${propertyId}`);
 	return await response.data;
 }
 
 // Function to fetch residence type by ID
 async function fetchResidenceTypeById(residenceTypeId: string) {
-	const response = await api(
-		`${process.env.NEXT_PUBLIC_BASE_URL}/residences/${residenceTypeId}`
-	);
-
+	const response = await api.get(`/residences/${residenceTypeId}`);
 	return await response.data;
 }
 

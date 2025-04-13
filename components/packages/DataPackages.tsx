@@ -605,7 +605,7 @@ const DataPackages = ({ statusFilter }: { statusFilter: string }) => {
 								return numB - numA; // Descending order
 							})
 							.map((item: any) => {
-								console.log(item, "item");
+								// console.log(item, "item");
 								return (
 									<React.Fragment key={item.id}>
 										<TableRow className="hover:bg-gray-50 flex-wrap">

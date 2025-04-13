@@ -4,10 +4,12 @@ import axios from "axios";
 import { headers } from "next/headers";
 
 // Base URL for API requests
+const BASE_URL =
+	"http://ec2-3-28-58-24.me-central-1.compute.amazonaws.com/api/v1";
 
 // Create axios instance with optimized configuration
 const api = axios.create({
-	baseURL: process.env.NEXT_PUBLIC_BASE_URL,
+	baseURL: BASE_URL,
 	timeout: 10000, // 10 seconds timeout
 	headers: {
 		"Content-Type": "application/json",

@@ -1,20 +1,20 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import { NextRequest, NextResponse } from "next/server";
 
+const BASE_URL =
+	"http://ec2-3-28-58-24.me-central-1.compute.amazonaws.com/api/v1";
+
 // Function to block time slots
 async function blockTimeSlots(body: any) {
 	try {
-		const response = await fetch(
-			`${process.env.NEXT_PUBLIC_BASE_URL}/bookings/block-schedule`,
-			{
-				method: "POST",
-				headers: {
-					"Content-Type": "application/json",
-					Accept: "application/json",
-				},
-				body: JSON.stringify(body),
-			}
-		);
+		const response = await fetch(`${BASE_URL}/bookings/block-schedule`, {
+			method: "POST",
+			headers: {
+				"Content-Type": "application/json",
+				Accept: "application/json",
+			},
+			body: JSON.stringify(body),
+		});
 
 		const responseText = await response.text(); // Helps debug API response
 		console.log("Response Text:", responseText);
